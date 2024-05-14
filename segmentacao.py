@@ -3,7 +3,7 @@ import cv2
 # Segmentção da Imagem - region of interest (ROI)
 
 # Carregar a imagem
-image = cv2.imread("carro.jpg")
+image = cv2.imread("/assets/images/test/carro.jpg")
 
 # Aplicar a limiarização
 ret, thresholded = cv2.threshold(image, 200, 255, cv2.THRESH_BINARY)
@@ -57,10 +57,10 @@ import os
 pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 # Salvar o ROI como uma nova imagem
-cv2.imwrite("roi_carro.jpg", roi)
+cv2.imwrite("/assets/images/teste/roi_carro.jpg", roi)
 
 # Usa o pytesseract para realizar OCR na imagem
-imagem = Image.open("roi_carro.jpg")
+imagem = Image.open("/assets/images/teste/roi_carro.jpg")
 
 texto = pytesseract.image_to_string(imagem)
 
